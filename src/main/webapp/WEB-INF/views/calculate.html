@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Calculate</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        input:read-only {
+            background: lightgray;
+        }
+
+        .row {
+            margin-top: 15px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<form id="edit-form" th:method="GET">
+    <div class="row">
+        <label for="start-input">Рабочий день:</label>
+        <input id="start-input" name="startDate" type="text" th:height="55" th:value="${period.startDate}" value="01-01-2021"/>
+    </div>
+    <div class="row">
+        <label for="target-input">Целевой день:</label>
+        <input id="target-input" name="targetDate" type="text" th:value="${period.targetDate}" value="01-01-2021"/>
+    </div>
+    <div class="row">
+        <button type="submit">Рассчитать</button>
+    </div>
+    <div class="row">
+        <label for="output">Результат:</label>
+        <input id="output" name="output-result" readonly="readonly" type="text" th:size="50" th:value="${result}" value="01-01-2021"/>
+    </div>
+</form>
+
+</body>
+</html>
